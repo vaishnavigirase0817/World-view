@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Virtual Travel Explorer</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1><i class="fas fa-globe-americas"></i> WORLD VIEW </h1>
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="Search destinations..." />
+      <button onclick="searchDestinations()"><i class="fas fa-search"></i></button>
+    </div>
+  </header>
+
+  <nav class="filter-nav">
+    <button class="filter-btn active" onclick="filterByContinent('all')">All</button>
+    <button class="filter-btn" onclick="filterByContinent('asia')">Asia</button>
+    <button class="filter-btn" onclick="filterByContinent('america')">America</button>
+    <button class="filter-btn" onclick="filterByContinent('oceania')">Oceania</button>
+  </nav>
+
+  <section class="selector">
+    <label for="place">Choose a destination:</label>
+    <select id="place">
+      <option value="tokyo">Tokyo, Japan</option>
+      <option value="newyork">New York, USA</option>
+      <option value="london">London, UK</option>
+      <option value="sydney">Sydney, Australia</option>
+    </select>
+    <button onclick="showPlace()"><i class="fas fa-plane"></i> Explore</button>
+    <button id="favoriteBtn" onclick="toggleFavorite()"><i class="far fa-heart"></i> Add to Favorites</button>
+  </section>
+
+  <section class="favorites-section">
+    <h3><i class="fas fa-heart"></i> Your Favorites</h3>
+    <div id="favoritesList" class="favorites-list"></div>
+  </section>
+
+  <section id="details" class="details">
+    <div class="welcome-message">
+      <h2>Welcome to World View Explorer!</h2>
+      <p>Select a destination above to start your virtual journey around the world.</p>
+      <div class="features-grid">
+        <div class="feature-card">
+          <i class="fas fa-cloud-sun"></i>
+          <h4>Live Weather</h4>
+          <p>Get real-time weather information</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-map-marked-alt"></i>
+          <h4>Interactive Maps</h4>
+          <p>Explore with detailed maps</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-utensils"></i>
+          <h4>Local Cuisine</h4>
+          <p>Discover traditional foods</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-camera"></i>
+          <h4>Virtual Tours</h4>
+          <p>Watch immersive videos</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Virtual Travel Explorer. Made with <i class="fas fa-heart"></i> for travel enthusiasts.</p>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
